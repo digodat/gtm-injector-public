@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "GTM Injector",
+	"description": "Inject Google Tag Manager in any page!",
+	"version": "0.2",
+	"icons": { 
+		"32": "injector-32.png",
+		"48": "injector-on-48.png",
+		"128": "injector-on-128.png"
+	},
+	"browser_action": {
+		"default_popup": "popUp.html",
+	    "default_icon": {
+			"32":"injector-32.png"
+		}
+  	},
+	"content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js":["content.js"]
+  	}],
+  	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"permissions": ["storage","tabs","activeTab","http://*/*","https://*/*"]
+}

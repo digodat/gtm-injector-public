@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>GTM Injector Settings</title>
+    <script src="popUp.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popUp.css">
+    <link rel="stylesheet" href="mdl/material.min.css">
+    <script src="mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <header>
+      <h1>Tag Manager Injector</h1>
+      <div id="statusMsg">
+        <div id="statusMsg-on"></div>
+        <div id="statusMsg-injecting"></div>
+      </div>
+    </header>
+
+    <div id="optionsForm">
+      <div class="formGroup" id="gtmidgroup">
+        <p class="options"> GTM Container ID</p>
+        <div style="display:flex;">
+          <input type="text" id="gtmID" name="gtmID" placeholder="GTM-XXXXXXX">
+          <span style="margin-left:15px; display:flex;" id="error-gtm" class="error">Please complete this field</span>
+        </div>
+      </div>
+
+      <div class="formGroup" id="domainsGroup" >
+        <p class="options" title="In which domains do you want to inject the container?"> Domain(s) </p>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+          <input class="mdl-radio__button" type="radio" name="pageType" value="regex" /> RegEx
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+          <input class="mdl-radio__button" type="radio" name="pageType" value="exactMatch" /> Exact match
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+          <input class="mdl-radio__button" type="radio" name="pageType" value="alldomains" /> All Domains
+        </label>
+        <input class="mdl-textfield__input" type="text" id="domains" name="page" placeholder="www.example.com or .*examplePattern.*" />
+        <span id="error" class="error">Please complete the domain(s) field</span>
+      </div>
+
+      <div class="formGroup">
+        <input type="checkbox" id="isOn" name="isOn" hidden />
+        <input type="checkbox" id="isInjecting" name="isInjecting" hidden />
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" value="on" id="toggle-on" name="toggle-on">Start</button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" value="off" id="toggle-off" name="toggle-off">Stop</button>
+      </div>
+      <br/>
+      
+    </div>
+  </body>
+</html>
+
